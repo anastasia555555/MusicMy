@@ -1,0 +1,82 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+body {
+    background-color: whitesmoke;
+/*    background-image: url('PNGзадник.png');
+*/}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+    nav ul {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        height: 49px;
+        background-color: white;
+        color: black;
+    }
+    
+    nav ul li{
+        padding: 0 12px;
+    }
+
+.container {
+    padding-right: 2em;
+    padding-top: 2em;
+    min-height: 500px;
+    color: whitesmoke;
+    font-family: 'Varela Round', sans-serif;
+    display: flex;
+    margin: 23px auto;
+    width: 60%;
+    border-radius: 12px;
+    background-image: url('PNGмногоцвета2.png');
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+
+.songList {
+    padding: 0 20px;
+    justify-items: center;
+}
+
+.songItem {
+    display: flex;
+    background-color: white;
+    height: 50px;
+    width: 100%;
+    color: dimgrey;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 13px;
+    margin: 12px 2px;
+    padding: 0 12px;
+    padding-right: 1em;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 34px;
+}
+
+.button:hover {
+    display: inline-block;
+    background-color: darkgreen;
+    color: darkgreen;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transition-duration: 0.4s;
+}
+
+

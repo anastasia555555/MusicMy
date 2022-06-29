@@ -1,0 +1,71 @@
+﻿@model MusicMy.Models.MusicVideo
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MusicMy - Your favourite music is here</title>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <style>
+        #GFG {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="brand">MusicMy</li>
+            <li><a id="GFG" asp-action="Browse">Browse</a></li>
+            <li><a id="GFG" asp-action="MySaves">My Saves</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="songList">
+            <iframe src="https://www.youtube.com/embed/@(Model.OriginalId)?controls=0" height="260" width="320" frameborder="0"
+                    allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Ooops</iframe>
+
+            <h3>Change according to restraints</h3>
+            <form class="button" asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="OriginalId" />
+                <input type="hidden" asp-for="ThumbnailURL" />
+
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Channel" class="control-label"></label>
+                    <input asp-for="Channel" class="form-control" />
+                    <span asp-validation-for="Channel" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="URL" class="control-label"></label>
+                    <input asp-for="URL" class="form-control" />
+                    <span asp-validation-for="URL" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Playlist" class="control-label"></label>
+                    <input asp-for="Playlist" class="form-control" />
+                    <span asp-validation-for="Playlist" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

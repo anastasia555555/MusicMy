@@ -1,0 +1,67 @@
+﻿@model MusicMy.Models.MySavesViewModel
+
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "MySaves";
+}
+
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MusicMy - Your favourite music is here</title>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <style>
+        #GFG {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="brand">MusicMy</li>
+            <li><a  id = "GFG" asp-action="Browse">Browse</a></li>
+            <li><a  id = "GFG" asp-action="MySaves">My Saves</a></li>
+            <li class="searchBar">
+                <form asp-controller="MusicVideos" asp-action="MySaves" method="get">
+                    <p>
+                        <select asp-for="MusicVideoPlaylist" asp-items="Model.Playlists">
+                            <option value="">All</option>
+                        </select>
+
+                        <input type="text" name="SearchString" />
+                        <input type="submit" value="Search" />
+                    </p>
+                </form>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="songList">
+            <h1>My Horded Treasure</h1>
+            <div class="songItemContainer">
+               @foreach (var item in Model.MusicVideos)
+                {
+                    <div class="songItem">
+                        <span><a id="GFG" href="@item.URL">@Html.DisplayFor(modelItem => item.Title)</a></span>
+                        <span>@Html.DisplayFor(modelItem => item.Playlist)</span>
+                        <span>
+                            <a  id = "GFG" asp-action="Edit" asp-route-id="@item.Id">|Edit </a>
+                            <a  id = "GFG" asp-action="Details" asp-route-id="@item.Id">|Details </a>
+                            <a  id = "GFG" asp-action="Delete" asp-route-id="@item.Id">|Delete</a>
+                        </span>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
